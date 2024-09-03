@@ -87,8 +87,9 @@ def print_dataset_info(dataset):
     e = dataset.graph['edge_index'].shape[1]
     c = max(dataset.label.max().item() + 1, dataset.label.shape[1])
     d = dataset.graph['node_feat'].shape[1]
+    ed = dataset.graph['edge_feat'].shape[1]
 
-    print(f">> Dataset {dataset.name} | num nodes {n} | num edges {e} | num node feats {d} | num classes {c}")
+    print(f">> Dataset {dataset.name} | num nodes {n} | num edges {e} | num node feats {d} | num edge feats {ed }|num classes {c}")
     return n, c, d
 
 
