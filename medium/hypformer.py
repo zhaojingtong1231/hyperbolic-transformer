@@ -288,6 +288,7 @@ class HypFormer(nn.Module):
     def forward(self, dataset):
         x, edge_index = dataset.graph['node_feat'], dataset.graph['edge_index'][0]
         x1 = self.trans_conv(x)  # hyperbolic Transformer encoder
+        # x1 = self.trans_conv(x1)  # hyperbolic Transformer encoder
 
         if self.use_graph:
             x2 = self.graph_conv(x, edge_index)  # Graph encoder
